@@ -6,11 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 
 export async function getStaticPaths() {
   return {
-    paths: [
-      { params: { slug: 'trendings' } },
-      { params: { slug: 'toprated' } },
-      { params: { slug: 'upcoming' } },
-    ],
+    paths: [],
     fallback: 'blocking', // false or 'blocking'
   }
 }

@@ -6,5 +6,5 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-  staticPageGenerationTimeout: 10000,
+  // staticPageGenerationTimeout: 10000,
 }
