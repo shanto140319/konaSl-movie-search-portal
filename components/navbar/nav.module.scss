@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem 0rem;
+}
+.logo {
+  font-weight: 800;
+  font-size: 30px;
+}
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.profileImg {
+  height: 40px;
+  width: 40px;
+  border-radius: 100% !important;
+  object-fit: cover;
+  border: 3px silod #222;
+}

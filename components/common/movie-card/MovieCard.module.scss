@@ -1,0 +1,32 @@
+.card {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.poster {
+  border: 0.5px solid green !important;
+}
+
+.title {
+  font-size: 16px;
+  padding: 5px;
+  // margin-top: 5px !important;
+}
+.date {
+  margin: 0;
+  padding: 0 5px 5px;
+}
+.rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  // background-color: green;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+}

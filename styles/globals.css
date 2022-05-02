@@ -1,16 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap');
+:root {
+  --dark-green: #183a1d;
+  --light-green: #e1eedd;
+  --orange: #f0a04b;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--dark-green);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--orange);
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
+p {
+  margin: 5px 0;
+  line-height: 1.4;
+}
 
 * {
   box-sizing: border-box;
+}
+
+.section {
+  padding: 0rem 2rem;
+}
+
+.btn {
+  padding: 0.6em 1.2em;
+  background-color: var(--dark-green);
+  color: white;
+  border-radius: 0.13em;
+  text-transform: capitalize;
+  font-weight: 400;
+  border: none;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.trailer-btn {
+  margin-top: 10px;
+  background-color: palevioletred;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+.slick-slide > div {
+  padding: 0 10px;
+}
+.green {
+  background-color: green;
+}
+.orange {
+  background-color: orange;
+}
+.red {
+  background-color: red;
 }

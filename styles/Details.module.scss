@@ -1,0 +1,13 @@
+.posterWrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  padding: 40px;
+  margin-top: 50px;
+}
+.poster {
+  border-radius: 5px;
+}
