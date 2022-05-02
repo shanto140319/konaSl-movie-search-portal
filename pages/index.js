@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { getTopRated, getTrending, getUpcoming } from '../api/getAllData'
 import Category from '../components/category/Category'
 import styles from '../styles/Home.module.css'
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const trendings = await getTrending(1)
   const toprated = await getTopRated(1)
   const upComing = await getUpcoming(1)
@@ -13,7 +13,7 @@ export async function getStaticProps() {
       toprated,
       upComing,
     },
-    revalidate: 60 * 5, // In seconds
+    // revalidate: 60 * 5, // In seconds
   }
 }
 
