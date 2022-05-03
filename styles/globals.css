@@ -41,6 +41,11 @@ p {
 .section {
   padding: 0rem 2rem;
 }
+@media (max-width: 800px) {
+  .section {
+    padding: 0rem 1rem;
+  }
+}
 
 .btn {
   padding: 0.6em 1.2em;
@@ -59,12 +64,6 @@ p {
   background-color: palevioletred;
 }
 
-.slick-list {
-  margin: 0 -10px;
-}
-.slick-slide > div {
-  padding: 0 10px;
-}
 .green {
   background-color: green;
 }
@@ -73,4 +72,12 @@ p {
 }
 .red {
   background-color: red;
+}
+
+/* slider gap css */
+.slick-list {
+  margin: 0 -5px;
+}
+.slick-slide > div {
+  padding: 0 5px;
 }

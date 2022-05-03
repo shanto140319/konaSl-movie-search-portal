@@ -11,9 +11,10 @@ function SampleNextArrow(props) {
       className={className}
       style={{
         ...style,
-        background: 'green',
-        height: 50,
-        width: 30,
+        background: 'gray',
+        height: 60,
+        width: 35,
+        color: '#222',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -30,9 +31,9 @@ function SamplePrevArrow(props) {
       className={className}
       style={{
         ...style,
-        background: 'green',
-        height: 50,
-        width: 30,
+        background: 'gray',
+        height: 60,
+        width: 35,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -48,23 +49,31 @@ const HomeSlider = ({ data }) => {
     lazyLoad: true,
     autoplay: false,
     speed: 500,
-    slidesToShow: 7,
+    slidesToShow: 6,
     slidesToScroll: 3,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 780,
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 800,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 2,
+
+          nextArrow: '',
+          prevArrow: '',
         },
       },
       {
@@ -72,6 +81,8 @@ const HomeSlider = ({ data }) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          nextArrow: '',
+          prevArrow: '',
         },
       },
     ],
