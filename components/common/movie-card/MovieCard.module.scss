@@ -15,8 +15,9 @@
 }
 
 .title {
-  font-size: 16px;
+  font-size: 18px;
   padding: 5px;
+  color: #cafaf7;
   // margin-top: 5px !important;
 }
 .date {
@@ -50,7 +51,7 @@
 .overlay {
   position: absolute;
   bottom: 0;
-  background-color: rgba(47, 115, 67, 0.9);
+  background-color: rgba(255, 115, 67, 0.91);
   height: 50%;
   padding: 5px;
   width: 100%;

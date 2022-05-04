@@ -6,7 +6,7 @@ import { getUpcoming } from '../api/getAllData'
 import MovieCard from '../components/common/movie-card/MovieCard'
 import Title from '../components/common/Title'
 
-const Toprated = ({ data }) => {
+const Upcoming = ({ data }) => {
   const [page, setPage] = useState(data.page)
   const [totalPage, setTotalPage] = useState(data.total_pages)
   const [allCategory, setAllCategory] = useState(data.results)
@@ -22,9 +22,9 @@ const Toprated = ({ data }) => {
   return (
     <section className='section' style={{ marginTop: 50 }}>
       <Head>
-        <title>Toprated</title>
+        <title>Upcoming</title>
       </Head>
-      <Title>Toprated</Title>
+      <Title>Upcoming</Title>
       <InfiniteScroll
         dataLength={allCategory.length}
         next={() => fetchNext(page)}
@@ -38,8 +38,8 @@ const Toprated = ({ data }) => {
     </section>
   )
 }
-Toprated.layout = 'L1'
-export default Toprated
+Upcoming.layout = 'L1'
+export default Upcoming
 
 export async function getStaticProps(contex) {
   const data = await getUpcoming(1)

@@ -27,7 +27,12 @@
   border: 3px silod #222;
 }
 .hideTab {
-  @media (max-width: 1000px) {
+  @media (max-width: 1050px) {
+    display: none !important;
+  }
+}
+.hideLargescreen {
+  @media (min-width: 1051px) {
     display: none !important;
   }
 }

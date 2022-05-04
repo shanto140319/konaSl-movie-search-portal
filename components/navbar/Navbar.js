@@ -28,6 +28,10 @@ const Navbar = () => {
         <Link href='/trending'>Trending</Link>
         <Link href='/toprated'>Toprated</Link>
         <Link href='/upcoming'>Upcoming</Link>
+        <Link href='/watchlist'>Watchlist</Link>
+      </div>
+      <div className={style.hideLargescreen}>
+        <Link href='/watchlist'>Watchlist</Link>
       </div>
 
       <Search openSearchModal={setSearchModal} />

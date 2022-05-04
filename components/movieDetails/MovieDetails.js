@@ -3,10 +3,18 @@ import { getVideos } from '../../api/getAllData'
 import style from './MovieDetails.module.scss'
 import Modal from '../common/Modal'
 import Trailer from '../common/Trailer'
+import WatchList from '../watchlist/WatchList'
 
 const MovieDetails = ({ movie }) => {
-  const { id, title, release_date, genres, overview, production_companies } =
-    movie
+  const {
+    id,
+    title,
+    release_date,
+    genres,
+    overview,
+    production_companies,
+    poster_path,
+  } = movie
 
   const [loading, setLoading] = useState(false)
   const [showTrailer, setShowTrailer] = useState(false)
@@ -69,6 +77,12 @@ const MovieDetails = ({ movie }) => {
       <button className='btn trailer-btn' onClick={handelTrailer}>
         Watch Trailer
       </button>
+      <WatchList
+        id={id}
+        title={title}
+        poster={poster_path}
+        date={release_date}
+      />
     </div>
   )
 }

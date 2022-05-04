@@ -59,3 +59,13 @@
     font-size: 25px;
   }
 }
+
+.tooltipText {
+  position: absolute;
+  top: 0px;
+  left: 200px;
+
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background-color: var(--orange);
+}
