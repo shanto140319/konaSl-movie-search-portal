@@ -23,6 +23,13 @@ const Navbar = () => {
         </a>
       </Link>
 
+      <div className={`${style.navLinks} ${style.hideTab}`}>
+        <Link href='/'>Home</Link>
+        <Link href='/trending'>Trending</Link>
+        <Link href='/toprated'>Toprated</Link>
+        <Link href='/upcoming'>Upcoming</Link>
+      </div>
+
       <Search openSearchModal={setSearchModal} />
       {searchModal && (
         <Modal height='100%' width='100%' maxWidth='100%' onClose={onClose}>

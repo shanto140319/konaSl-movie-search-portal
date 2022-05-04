@@ -73,6 +73,7 @@ const SearchContent = ({ onClose }) => {
         <input
           type='text'
           className={style.textInput}
+          value={query}
           onChange={handleSearch}
         />
         <RiListSettingsLine onClick={() => setDropdown(!dropdown)} />
@@ -83,6 +84,7 @@ const SearchContent = ({ onClose }) => {
               className={style.numberInput}
               id='year'
               type='number'
+              value={year}
               onChange={(e) => setYear(e.target.value)}
             />
           </div>

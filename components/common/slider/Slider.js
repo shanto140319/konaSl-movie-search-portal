@@ -70,8 +70,7 @@ const HomeSlider = ({ data }) => {
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 3,
-
+          slidesToShow: 4,
           nextArrow: '',
           prevArrow: '',
         },
@@ -79,8 +78,7 @@ const HomeSlider = ({ data }) => {
       {
         breakpoint: 520,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToShow: 3,
           nextArrow: '',
           prevArrow: '',
         },

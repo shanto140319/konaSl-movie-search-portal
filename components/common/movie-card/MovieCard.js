@@ -24,8 +24,10 @@ const MovieCard = ({ card, onClose }) => {
           layout='responsive'
           className={style.poster}
         />
-        <h4 className={style.title}>{title || name}</h4>
-        <p className={style.date}>{release_date || first_air_date}</p>
+        <div className={`${style.overlay} ${style.hideMobile}`}>
+          <h3 className={`${style.title}`}>{title || name}</h3>
+          <p className={`${style.date} `}>{release_date || first_air_date}</p>
+        </div>
 
         <div
           className={` ${

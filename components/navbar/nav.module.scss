@@ -26,13 +26,24 @@
   object-fit: cover;
   border: 3px silod #222;
 }
+.hideTab {
+  @media (max-width: 1000px) {
+    display: none !important;
+  }
+}
 .hideMobile {
   @media (max-width: 800px) {
-    display: none;
+    display: none !important;
   }
 }
 .hideDesktop {
   @media (min-width: 801px) {
-    display: none;
+    display: none !important;
   }
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }

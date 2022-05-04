@@ -2,6 +2,13 @@
   width: 100%;
   position: relative;
   cursor: pointer;
+  &:hover {
+    .overlay {
+      transition: 0.3s ease-in-out;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
 }
 .poster {
   border: 0.5px solid green !important;
@@ -29,4 +36,30 @@
   justify-content: center;
   color: #fff;
   font-size: 14px;
+}
+.hideMobile {
+  @media (max-width: 800px) {
+    display: none !important;
+  }
+}
+.hideDesktop {
+  @media (min-width: 801px) {
+    display: none;
+  }
+}
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(47, 115, 67, 0.9);
+  height: 50%;
+  padding: 5px;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
 }
