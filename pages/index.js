@@ -26,7 +26,7 @@ function Home({ trendings, toprated, upComing }) {
     //   setLoading(false)
     // }, 1000)
     trendings && toprated && upComing && setLoading(false)
-  }, [])
+  }, [trendings, toprated, upComing])
 
   if (loading) {
     return <div className='lds-dual-ring'></div>

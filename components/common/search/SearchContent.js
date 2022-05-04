@@ -96,7 +96,7 @@ const SearchContent = ({ onClose }) => {
               return <MovieCard key={index} card={card} onClose={onClose} />
             })}
         </div>
-        {loading && <div class='loader'></div>}
+        {loading && <div className='loader'></div>}
         {data && totalPage > page && (
           <div className={style.buttonWrapper}>
             <button className='btn loadmore-btn' onClick={loadMore}>
