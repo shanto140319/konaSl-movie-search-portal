@@ -34,3 +34,10 @@ export const getVideos = async (id) => {
   )
   return response.data
 }
+
+export const getSearch = async (query, page = 1, year) => {
+  const response = await API.get(
+    `search/movie?api_key=${key}&language=en-US&query=${query}&page=${page}&primary_release_year=${year}`
+  )
+  return response.data
+}

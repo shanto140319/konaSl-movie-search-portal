@@ -1,12 +1,20 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { useAuth } from '../../context/authcontext'
 import style from './nav.module.scss'
 import { BiMovie } from 'react-icons/bi'
 import { BiLogOutCircle } from 'react-icons/bi'
 import { BiLogInCircle } from 'react-icons/bi'
+import Search from '../common/search/Search'
+import Modal from '../common/Modal'
+import SearchContent from '../common/search/SearchContent'
 const Navbar = () => {
   const { currentUser, logout, signInWithGoogle } = useAuth()
+  const [searchModal, setSearchModal] = useState(false)
+
+  const onClose = () => {
+    setSearchModal(false)
+  }
   return (
     <nav className={`section ${style.root}`}>
       <Link href='/'>
@@ -14,6 +22,13 @@ const Navbar = () => {
           <BiMovie /> <span className={style.hideMobile}>Movie App</span>
         </a>
       </Link>
+
+      <Search openSearchModal={setSearchModal} />
+      {searchModal && (
+        <Modal height='100%' width='100%' maxWidth='100%' onClose={onClose}>
+          <SearchContent onClose={onClose} />
+        </Modal>
+      )}
 
       {currentUser ? (
         <div className={style.user}>

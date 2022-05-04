@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import style from './MovieCard.module.scss'
 import Link from 'next/link'
-const MovieCard = ({ card }) => {
+const MovieCard = ({ card, onClose }) => {
   const {
     id,
     title,
@@ -15,7 +15,7 @@ const MovieCard = ({ card }) => {
   } = card
   return (
     <Link href={`/details/${id}`} passHref>
-      <article className={style.card}>
+      <article className={style.card} onClick={onClose}>
         <Image
           src={`${process.env.NEXT_PUBLIC_REACT_APP_IMAGE_BASE_500}${poster_path}`}
           alt=''

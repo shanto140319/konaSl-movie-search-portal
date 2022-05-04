@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import { getTopRated, getTrending, getUpcoming } from '../api/getAllData'
 import Category from '../components/category/Category'
@@ -18,6 +19,18 @@ export async function getStaticProps() {
 }
 
 function Home({ trendings, toprated, upComing }) {
+  const [loading, setLoading] = React.useState(true)
+
+  React.useEffect(() => {
+    // setTimeout(() => {
+    //   setLoading(false)
+    // }, 1000)
+    trendings && toprated && upComing && setLoading(false)
+  }, [])
+
+  if (loading) {
+    return <div className='lds-dual-ring'></div>
+  }
   return (
     <div className={styles.container}>
       <Head>

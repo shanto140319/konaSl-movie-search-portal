@@ -28,7 +28,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,6 +41,7 @@
   padding: 10px 0;
   max-width: 840px;
   // background-color: gray;
+  color: #fff;
 }
 .closeBtn {
   background-color: var(--orange);
@@ -53,6 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   svg {
     font-size: 25px;
   }
