@@ -1,5 +1,6 @@
 import { API } from './axios'
 
+// tmdb api key
 const key = process.env.NEXT_PUBLIC_REACT_APP_KEY
 
 export const getTrending = async (page) => {
@@ -15,6 +16,7 @@ export const getTopRated = async (page) => {
   )
   return response.data
 }
+
 export const getUpcoming = async (page) => {
   const response = await API.get(
     `movie/upcoming?api_key=${key}&language=en-US&page=${page}`
@@ -28,13 +30,14 @@ export const getDetails = async (id) => {
   )
   return response.data
 }
+
 export const getVideos = async (id) => {
   const response = await API.get(
     `movie/${id}/videos?api_key=${key}&language=en-US`
   )
   return response.data
 }
-
+//getting trailer videos
 export const getSearch = async (query, page = 1, year) => {
   const response = await API.get(
     `search/movie?api_key=${key}&language=en-US&query=${query}&page=${page}&primary_release_year=${year}`

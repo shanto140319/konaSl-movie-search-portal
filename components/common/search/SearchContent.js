@@ -14,6 +14,8 @@ const SearchContent = ({ onClose }) => {
   const [data, setData] = useState([])
   const [page, setPage] = useState(1)
   const [totalPage, setTotalPage] = useState(1)
+  const [initialLoader, setInitialLoader] = useState(false)
+
   const [loading, setLoading] = useState(false)
   const dropdownRef = useRef(null)
 
@@ -43,12 +45,13 @@ const SearchContent = ({ onClose }) => {
   useEffect(() => {
     const searchFunction = async () => {
       if (debounceQuery.length > 2) {
+        setInitialLoader(true)
         const response = await getSearch(debounceQuery, 1, debounceYear)
-        setLoading(true)
+
         setTotalPage(response.total_pages)
         setPage(response.page)
         setData(response.results)
-        setLoading(false)
+        setInitialLoader(false)
       }
     }
     searchFunction()
@@ -90,23 +93,26 @@ const SearchContent = ({ onClose }) => {
           </div>
         )}
       </div>
-
-      <div className={style.resultsWrapper}>
-        <div className={style.results}>
-          {data &&
-            data.map((card, index) => {
-              return <MovieCard key={index} card={card} onClose={onClose} />
-            })}
-        </div>
-        {loading && <div className='loader'></div>}
-        {data && totalPage > page && (
-          <div className={style.buttonWrapper}>
-            <button className='btn loadmore-btn' onClick={loadMore}>
-              Load more..
-            </button>
+      {initialLoader ? (
+        <div className='loader'></div>
+      ) : (
+        <div className={style.resultsWrapper}>
+          <div className={style.results}>
+            {data &&
+              data.map((card, index) => {
+                return <MovieCard key={index} card={card} onClose={onClose} />
+              })}
           </div>
-        )}
-      </div>
+          {loading && <div className='loader'></div>}
+          {data && totalPage > page && (
+            <div className={style.buttonWrapper}>
+              <button className='btn loadmore-btn' onClick={loadMore}>
+                Load more..
+              </button>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

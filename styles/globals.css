@@ -92,6 +92,7 @@ p {
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  margin-top: 10px;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 12px solid palevioletred;

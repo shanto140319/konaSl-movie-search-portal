@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { getTopRated, getTrending, getUpcoming } from '../api/getAllData'
 import Category from '../components/category/Category'
 import styles from '../styles/Home.module.scss'
+
 export async function getStaticProps() {
   const trendings = await getTrending(1)
   const toprated = await getTopRated(1)
@@ -25,6 +26,25 @@ function Home({ trendings, toprated, upComing }) {
     trendings && toprated && upComing && setLoading(false)
   }, [trendings, toprated, upComing])
 
+  //categories data
+  const categories = [
+    {
+      data: trendings?.results.slice(0, 10) || [],
+      title: 'Trending',
+      url: '/view-all/trending',
+    },
+    {
+      data: toprated?.results.slice(0, 10) || [],
+      title: 'Toprated',
+      url: '/view-all/toprated',
+    },
+    {
+      data: upComing?.results.slice(0, 10) || [],
+      title: 'Upcoming',
+      url: '/view-all/upcoming',
+    },
+  ]
+
   if (loading) {
     return <div className='loader'></div>
   }
@@ -38,22 +58,12 @@ function Home({ trendings, toprated, upComing }) {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
+
       <section className='section'>
-        <Category
-          data={trendings?.results.slice(0, 10) || []}
-          title='Trending'
-          url='/view-all/trending'
-        />
-        <Category
-          data={toprated?.results.slice(0, 10) || []}
-          title='Toprated'
-          url='/view-all/toprated'
-        />
-        <Category
-          data={upComing?.results.slice(0, 10) || []}
-          title='Upcoming'
-          url='/view-all/upcoming'
-        />
+        {categories.map((category, index) => {
+          const { data, title, url } = category
+          return <Category key={index} data={data} title={title} url={url} />
+        })}
       </section>
     </div>
   )

@@ -9,7 +9,10 @@ const WatchList = ({ id, title, poster, date }) => {
 
   const { currentUser } = useAuth()
   useEffect(() => {
-    setWatchlist(JSON.parse(localStorage.getItem('watchlist')))
+    const localvalue = JSON.parse(localStorage.getItem('watchlist'))
+    if (localvalue) {
+      setWatchlist(localvalue)
+    }
   }, [])
 
   useEffect(() => {
@@ -22,7 +25,7 @@ const WatchList = ({ id, title, poster, date }) => {
     if (!currentUser) {
       setMessage('You have to login first!')
     } else {
-      const existingList = JSON.parse(localStorage.getItem('watchlist'))
+      const existingList = JSON.parse(localStorage.getItem('watchlist')) || []
 
       const newlist = [
         {
@@ -44,7 +47,9 @@ const WatchList = ({ id, title, poster, date }) => {
   }
 
   useEffect(() => {
-    localStorage.setItem('watchlist', JSON.stringify(watchlist))
+    if (watchlist.length) {
+      localStorage.setItem('watchlist', JSON.stringify(watchlist))
+    }
   }, [watchlist])
 
   return (

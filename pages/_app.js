@@ -1,4 +1,5 @@
 import Layout from '../components/common/Layout'
+import RouterWrapper from '../components/common/RouterWrapper'
 import { AuthProvider } from '../context/authcontext'
 import '../styles/globals.css'
 const layouts = {
@@ -9,9 +10,11 @@ function MyApp({ Component, pageProps }) {
     layouts[Component.layout] || (({ children }) => <>{children}</>)
   return (
     <AuthProvider>
-      <LayoutWrapper>
-        <Component {...pageProps} />
-      </LayoutWrapper>
+      <RouterWrapper>
+        <LayoutWrapper>
+          <Component {...pageProps} />
+        </LayoutWrapper>
+      </RouterWrapper>
     </AuthProvider>
   )
 }

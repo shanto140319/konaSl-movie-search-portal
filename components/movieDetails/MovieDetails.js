@@ -70,7 +70,7 @@ const MovieDetails = ({ movie }) => {
 
       {showTrailer && !loading && (
         <Modal onClose={onClose}>
-          <Trailer id={video.key} />{' '}
+          <Trailer id={video.key} />
         </Modal>
       )}
 

@@ -9,7 +9,7 @@ import Head from 'next/head'
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: 'blocking', // false or 'blocking'
+    fallback: 'blocking',
   }
 }
 

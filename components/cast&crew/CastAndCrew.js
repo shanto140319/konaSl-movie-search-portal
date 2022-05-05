@@ -6,10 +6,11 @@ const CastAndCrew = ({ credits }) => {
   return (
     <div className={style.creditsWrapper}>
       <Title>Cast</Title>
-      <div style={{ marginTop: 15 }}></div>
+      <div className={style.marginTop}></div>
       <CreditsSlider data={credits.cast} />
+
       <Title>Crew</Title>
-      <div style={{ marginTop: 15 }}></div>
+      <div className={style.marginTop}></div>
       <CreditsSlider data={credits.crew} />
     </div>
   )

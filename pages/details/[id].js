@@ -8,7 +8,7 @@ import CastAndCrew from '../../components/cast&crew/CastAndCrew'
 export async function getStaticPaths() {
   return {
     paths: [],
-    fallback: 'blocking', // false or 'blocking'
+    fallback: 'blocking',
   }
 }
 
