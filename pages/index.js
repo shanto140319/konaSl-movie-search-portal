@@ -15,6 +15,7 @@ export async function getStaticProps() {
     getTopRated(1),
     getUpcoming(1),
   ])
+  return {
     props: {
       trendings: response[0],
       toprated: response[1],
