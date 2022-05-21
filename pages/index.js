@@ -5,11 +5,16 @@ import Category from '../components/category/Category'
 import styles from '../styles/Home.module.scss'
 
 export async function getStaticProps() {
-  const trendings = await getTrending(1)
-  const toprated = await getTopRated(1)
-  const upComing = await getUpcoming(1)
-  const response = await Promise.all([trendings, toprated, upComing])
-  return {
+  // const trendings = await getTrending(1)
+  // const toprated = await getTopRated(1)
+  // const upComing = await getUpcoming(1)
+
+  //getting all data at a time
+  const response = await Promise.all([
+    getTrending(1),
+    getTopRated(1),
+    getUpcoming(1),
+  ])
     props: {
       trendings: response[0],
       toprated: response[1],
